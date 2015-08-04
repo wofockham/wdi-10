@@ -62,20 +62,9 @@ console.log('The area is ' + area);
 // Convert it to fahrenheit and output "NN°C is NN°F".
 // Now store a fahrenheit temperature into a variable.
 // Convert it to celsius and output "NN°F is NN°C."
+
 var celsiusTemp = 11.6;
 var fahrenheitTemp = celsiusTemp * 1.8 + 32;
 console.log(celsiusTemp + "°C is " + fahrenheitTemp + "°F");
 var celsiusTemp = (fahrenheitTemp - 32) / 1.8;
 console.log(fahrenheitTemp + "°F is " + celsiusTemp + "°C.");
-
-
-
-
-
-
-
-
-
-
-
-
