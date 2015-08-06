@@ -42,12 +42,34 @@ for (var i = 0; i < readingList.length; i++) {
   }
 }
 
+// The Movie Database
 
+// Create an object to store the following information about your favorite movie: title (a string), duration (a number), and stars (an array of strings).
+// Create a function to print out the movie information like so: "Puff the Magic Dragon lasts for 30 minutes. Stars: Puff, Jackie, Living Sneezes."
 
+var movie = {
+  title: "O Brother! Where Art Thou?",
+  duration: 107,
+  stars: ['George Clooney', 'John Tutturo', 'That Slinty Little Guy']
+};
 
+var movieFormatter = function (m) {
+  // var info = m.title + ' lasts for ' + m.duration + ' minutes.';
+  // info += ' Stars: ' + m.stars.join(', ');
 
+  var info = [
+    m.title,
+    'lasts for',
+    m.duration,
+    'minutes.',
+    'Stars:',
+    m.stars.join(', ')
+  ].join(' ');
 
+  console.log(info);
+};
 
+movieFormatter(movie);
 
 
 
