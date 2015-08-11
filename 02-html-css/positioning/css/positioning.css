@@ -1,3 +1,71 @@
 body {
-  background-color: lime;
+  background-color: lilac;
 }
+
+.box {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border: 1px solid black;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+}
+
+.fixed {
+  position: fixed;
+  top: 100px;
+  right: 200px;
+}
+
+.super-relative {
+  border: 1px solid pink;
+  width: 40%;
+  height: 300px;
+}
+
+.minibox {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  top: 10%;
+  left: 10%;
+  background-color: red;
+  z-index: -1000;
+}
+
+.green {
+  top: 25%;
+  left: 25%;
+  background-color: green;
+  z-index: 99999999999;
+}
+
+.blue {
+  top: 40%;
+  left: 40%;
+  background-color: blue;
+  z-index: 5000;
+}
+
+
+
