@@ -2,7 +2,7 @@
 
 body {
   color: white;
-  background-color: blue;
+  background-color: #bae;
   font-family: 'Lato', sans-serif;
 }
 
@@ -20,7 +20,8 @@ ul.gallery {
 
 .gallery li {
   display: inline-block;
-  width: 33%;
+  width: 32%;
+  margin: 0.1%;
 }
 
 .gallery li img {
@@ -29,20 +30,23 @@ ul.gallery {
 
 .thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .info {
   background-color: rgba(0, 0, 0, 0.7);
-  display: none;
+  opacity: 0;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 51%;
   top: 0;
   left: 0;
+  padding-top: 36%; /* approx. vertical centering */
+  transition: opacity 0.2s linear;
 }
 
 .thumb:hover .info {
-  display: block;
+  opacity: 1;
 }
 
 
