@@ -1,0 +1,57 @@
+body {
+  background-color: pink;
+}
+
+h1 {
+  text-decoration: underline;
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+img {
+  border-radius: 5px;
+}
+
+img.scotchad {
+  border: 75px solid red;
+}
+
+.groucho {
+  font-size: 150%;
+}
+
+p.groucho {
+  font-size: 300%;
+  text-align: right;
+}
+
+.ad {
+  border: 5px dashed blue;
+  width: 150px;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
