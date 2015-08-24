@@ -23,6 +23,8 @@ until menu_choice == 'q'
   case menu_choice
   when '+'
     add
+  when nil
+    # do nothing
   else
     puts "Invalid selection"
   end
