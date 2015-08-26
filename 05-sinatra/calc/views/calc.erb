@@ -1,0 +1,16 @@
+<% unless @result.nil? %>
+  <%= @x %>
+  <%= params[:operation] %>
+  <%= @y %>
+  =
+  <strong><%= @result %></strong>.
+
+  <hr>
+<% end %>
+
+<form action="/calc">
+  <input type="number" name="x" placeholder="first value">
+  <input type="text" name="operation" placeholder="*, /, +, -">
+  <input type="number" name="y" placeholder="second value">
+  <button>Calculate</button>
+</form>
