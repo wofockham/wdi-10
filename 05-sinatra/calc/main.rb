@@ -7,8 +7,9 @@ get '/' do
 end
 
 get '/calc' do
+
   @x = params[:x].to_f
-  @y = params[:y].to_f
+  @y = params[:x].to_f
 
   @result = case params[:operation]
   when '+' then @x + @y
