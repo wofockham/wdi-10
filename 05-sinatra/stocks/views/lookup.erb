@@ -1,0 +1,7 @@
+<% unless @price.nil? %>
+  <%= @stock_symbol %> TRADED AT $<%= @price %>
+<% else %>
+  Enter a valid stock symbol, idiot
+<% end %>
+
+<%= erb :form %>
