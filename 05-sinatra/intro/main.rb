@@ -17,6 +17,11 @@ get '/hi/:name' do
   "Hi #{ params[:name]  }"
 end
 
+get '/multiply/:x/:y' do
+  result = params[:x].to_f * params[:y].to_f
+  "the result is #{ result }"
+end
+
 get '/time' do
   Time.now.to_s
 end
