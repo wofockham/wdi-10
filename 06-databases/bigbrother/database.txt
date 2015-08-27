@@ -1,0 +1,8 @@
+riley,28,m
+abbey,28,f
+gigi,17,f
+tobes,25,m
+Craigsy,25,I'm not giving my gender to a machine
+Jonesy,m,74
+Peter,25
+Mary, 17, m
