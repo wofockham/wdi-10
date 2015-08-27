@@ -11,10 +11,21 @@ get '/butterflies' do
   erb :'butterflies/index'
 end
 
+get '/butterflies/new' do
+  erb :'butterflies/new'
+end
+
+post '/butterflies/create' do
+  query_db "INSERT INTO butterflies (name, family, image) VALUES ('#{params['name']}', '#{params['family']}', '#{params['image']}')"
+  redirect to '/butterflies'
+end
+
 get '/butterflies/:id' do
   @butterfly = query_db("SELECT * FROM butterflies WHERE id = #{ params[:id] }").first
   erb :'butterflies/show'
 end
+
+
 
 def query_db(sql)
   puts sql
