@@ -1,0 +1,8 @@
+<h2>Edit Butterfly</h2>
+<form action="/butterflies/<%= @butterfly['id'] %>" method="post">
+  <p><input type="text" name="name" placeholder="Name" value="<%= @butterfly['name'] %>"></p>
+  <p><input type="text" name="family" placeholder="Family" value="<%= @butterfly['family'] %>"></p>
+  <p><input type="url" name="image" placeholder="Image URL" value="<%= @butterfly['image'] %>"></p>
+
+  <input type="submit" value="Update butterfly">
+</form>
