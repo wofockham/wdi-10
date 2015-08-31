@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  release_date: 2015-08-31
+  classification: MyText
+  copy: false
+
+two:
+  title: MyText
+  release_date: 2015-08-31
+  classification: MyText
+  copy: false
