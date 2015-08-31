@@ -12,7 +12,6 @@ ActiveRecord::Base.establish_connection(
 require_relative './butterfly'
 require_relative './plant'
 
-
 after do
   ActiveRecord::Base.connection.close
 end
@@ -31,14 +30,7 @@ get '/butterflies/new' do
 end
 
 post '/butterflies' do
-  # butterfly = Butterfly.new
-  # butterfly.name = params['name']
-  # butterfly.family = params['family']
-  # butterfly.image = params['image']
-
-  # butterfly.save
-
-  @butterfly = Butterfly.create :name => params[:name], :family => params[:family], :image => params[:image]
+  butterfly = Butterfly.create :name => params[:name], :family => params[:family], :image => params[:image], :plant_id => params[:plant_id]
 
   redirect to "/butterflies/#{ butterfly.id }"
 end
@@ -60,15 +52,8 @@ get '/butterflies/:id/edit' do
 end
 
 post '/butterflies/:id' do
-  # query_db "UPDATE butterflies SET name='#{ params['name'] }', family='#{ params['family']}', image='#{ params['image'] }' WHERE id = #{ params['id'] }"
   butterfly = Butterfly.find params[:id]
-  # butterfly.name = params[:name]
-  # butterfly.family = params[:family]
-  # butterfly.image = params[:image]
-
-  # butterfly.save
-
-  butterfly.update :name => params[:name], :family => params[:family], :image => params[:image]
+  butterfly.update :name => params[:name], :family => params[:family], :image => params[:image], :plant_id => params[:plant_id]
 
   redirect to "/butterflies/#{ butterfly.id }"
 end
@@ -78,9 +63,35 @@ get '/plants' do
   erb :'plants/index'
 end
 
+get '/plants/new' do
+  erb :'plants/new'
+end
+
+post '/plants' do
+  plant = Plant.create :name => params[:name], :image => params[:image]
+  redirect to "/plants/#{ plant.id }"
+end
+
 get '/plants/:id' do
   @plant = Plant.find params[:id]
   erb :'plants/show'
+end
+
+get '/plants/:id/edit' do
+  @plant = Plant.find params[:id]
+  erb :'plants/edit'
+end
+
+post '/plants/:id' do
+  plant = Plant.find params[:id]
+  plant.update :name => params[:name], :image => params[:image]
+  redirect to "/plants/#{ plant.id }"
+end
+
+get '/plants/:id/delete' do
+  plant = Plant.find params[:id]
+  plant.destroy
+  redirect to '/plants'
 end
 
 

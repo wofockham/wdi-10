@@ -1,6 +1,14 @@
 <h2><%= @butterfly.name %></h2>
 <h3>Family: <%= @butterfly.family %></h3>
 
+<% if @butterfly.plant %>
+  <h3>Larval plant:
+    <a href="/plants/<%= @butterfly.plant.id %>">
+      <%= @butterfly.plant.name %>
+    </a>
+  </h3>
+<% end %>
+
 <% if @butterfly.image %>
   <img class="feature" src="<%= @butterfly.image %>">
 <% end %>

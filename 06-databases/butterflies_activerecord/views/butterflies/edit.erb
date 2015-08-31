@@ -4,5 +4,12 @@
   <p><input type="text" name="family" placeholder="Family" value="<%= @butterfly.family %>"></p>
   <p><input type="url" name="image" placeholder="Image URL" value="<%= @butterfly.image %>"></p>
 
+  <select name="plant_id">
+    <option>Larval plant...</option>
+    <% Plant.all.each do |plant| %>
+      <option <%= "selected" if @butterfly.plant_id == plant.id %> value="<%= plant.id %>"><%= plant.name %></option>
+    <% end %>
+  </select>
+
   <input type="submit" value="Update butterfly">
 </form>
