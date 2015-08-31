@@ -9,8 +9,9 @@ ActiveRecord::Base.establish_connection(
   :database => 'database.db'
 )
 
-class Butterfly < ActiveRecord::Base
-end
+require_relative './butterfly'
+require_relative './plant'
+
 
 after do
   ActiveRecord::Base.connection.close
@@ -71,3 +72,21 @@ post '/butterflies/:id' do
 
   redirect to "/butterflies/#{ butterfly.id }"
 end
+
+get '/plants' do
+  @plants = Plant.all
+  erb :'plants/index'
+end
+
+get '/plants/:id' do
+  @plant = Plant.find params[:id]
+  erb :'plants/show'
+end
+
+
+
+
+
+
+
+
