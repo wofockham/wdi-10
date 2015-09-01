@@ -1,3 +1,23 @@
-// Place all the styles related to the Planets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  background-image: url(http://vignette3.wikia.nocookie.net/space-jam/images/5/50/Wiki-background/revision/latest?cb=20130913230435);
+  background-size: cover;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1em;
+}
+
+nav {
+  text-align: right;
+}
+
+.controls {
+  text-align: right;
+}
+
+.feature {
+  max-width: 100%;
+}

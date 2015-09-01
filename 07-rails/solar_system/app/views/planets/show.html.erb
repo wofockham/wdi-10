@@ -1,0 +1,12 @@
+<h2><%= @planet.name %></h2>
+<p>Moon count: <%= @planet.moons %></p>
+<p>Orbit: <%= @planet.orbit %></p>
+
+<% if @planet.image %>
+  <%= image_tag @planet.image, :class => 'feature' %>
+<% end %>
+
+<div class="controls">
+  <%= link_to('Terraform planet', planet_edit_path(@planet.id)) %>
+  <%= button_to('Destroy planet', planet_path(@planet.id), :method => 'delete') %>
+</div>

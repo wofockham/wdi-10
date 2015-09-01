@@ -8,12 +8,15 @@
 </head>
 <body>
 
-<nav>
-  <%= link_to 'Planets', planets_path %>
-  <%= link_to 'New Planet', planets_new_path %>
-</nav>
+<div class="container">
+  <nav>
+    Solar System Database:
+    <%= link_to 'Planets', planets_path %>
+    <%= link_to 'New Planet', planets_new_path %>
+  </nav>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
