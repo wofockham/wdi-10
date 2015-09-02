@@ -4,11 +4,18 @@ class WorksController < ApplicationController
   end
 
   def show
+    @work = Work.find params[:id]
   end
 
   def new
   end
 
   def edit
+  end
+
+  def destroy
+    work = Work.find params[:id]
+    work.destroy
+    redirect_to works_path
   end
 end
