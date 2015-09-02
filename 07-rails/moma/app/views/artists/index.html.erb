@@ -1,0 +1,15 @@
+<h2>Artists</h2>
+
+<ul>
+  <% @artists.each do |artist| %>
+    <li>
+      <ul>
+        <li><%= image_tag artist.image %></li>
+        <li>Name: <%= artist.name %></li>
+        <li>Nationality: <%= artist.nationality %></li>
+        <li>Date of birth: <%= artist.dob %></li>
+        <li>Period: <%= artist.period %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
