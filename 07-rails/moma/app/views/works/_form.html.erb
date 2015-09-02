@@ -26,12 +26,7 @@
 
   <p>
     <label>Artist</label>
-    <select name="work[artist_id]">
-      <option></option>
-      <% Artist.all.each do |artist| %>
-        <option value="<%= artist.id %>"><%= artist.name %></option>
-      <% end %>
-    </select>
+    <%= f.select :artist_id, Artist.all.map { |artist| [ artist.name, artist.id ] }, :include_blank => true %>
   </p>
 
   <%= f.submit %>

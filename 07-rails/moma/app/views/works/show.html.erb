@@ -3,12 +3,15 @@
 <%= image_tag @work.image, :class => 'feature' %>
 
 <ul>
+  <% if @work.artist %>
+    <li>Artist: <%= link_to @work.artist.name, @work.artist %></li>
+  <% end %>
   <li>Year: <%= @work.year %></li>
   <li>Medium: <%= @work.medium %></li>
   <li>Style: <%= @work.style %></li>
 </ul>
 
 <div class="controls">
-  <%= link_to 'Delete', @work, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  <%= link_to('Delete', @work, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <%= link_to 'Edit', edit_work_path(@work) %>
 </div>
