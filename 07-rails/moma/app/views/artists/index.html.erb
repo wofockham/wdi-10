@@ -4,10 +4,10 @@
   <% @artists.each do |artist| %>
     <li>
       <ul>
-        <li><%= image_tag artist.image %></li>
-        <li>Name: <%= artist.name %></li>
+        <li><%= image_tag artist.image, :class => 'thumb' %></li>
+        <li>Name: <%= link_to artist.name, artist %></li>
         <li>Nationality: <%= artist.nationality %></li>
-        <li>Date of birth: <%= artist.dob %></li>
+        <li>Date of birth: <%= artist.dob.strftime "%A, %e %B %Y" %></li>
         <li>Period: <%= artist.period %></li>
       </ul>
     </li>

@@ -1,0 +1,8 @@
+<h2><%= @artist.name %></h2>
+
+<ul>
+  <li><%= image_tag @artist.image, :class => 'feature' %></li>
+  <li>Nationality: <%= @artist.nationality %></li>
+  <li>Date of birth: <%= @artist.dob.strftime "%A, %e %B %Y" %></li>
+  <li>Period: <%= @artist.period %></li>
+</ul>
