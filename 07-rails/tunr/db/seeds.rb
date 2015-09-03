@@ -30,7 +30,36 @@ u1 = User.create :name => 'Craigsy', :email => 'craigsy@gmail.com'
 u2 = User.create :name => 'Jonesy', :email => 'jonesy@gmail.com'
 
 Mixtape.destroy_all
-m1 = Mixtape.create :name => 'Mix 1'
+m1 = u1.mixtapes.create :name => 'Mix 1' # Associate AND create
 m2 = Mixtape.create :name => 'Mix 2'
 m3 = Mixtape.create :name => 'Other Mix'
+
+u2.mixtapes << m2 << m3 # Associate after creation
+
+a1.songs << s1
+a2.songs << s2
+a3.songs << s3
+a4.songs << s4
+a5.songs << s5
+
+ab1.songs << s1
+ab2.songs << s2
+ab3.songs << s3
+ab4.songs << s4
+ab5.songs << s5
+
+g1.songs << s1 << s2
+g2.songs << s4
+g3.songs << s3
+g4.songs << s1 << s2 << s3 << s4 << s5
+
+m1.songs << s5 << s4 << s3 << s2 << s1
+m2.songs << s1 << s3 << s5
+m3.songs << s1 << s2 << s5
+
+
+
+
+
+
 
