@@ -1,0 +1,17 @@
+<p><%= pluralize(@error_count1, 'error') %> occured.</p>
+
+<p><%= pluralize(@error_count2, 'error') %> occured.</p>
+
+<p><%= pluralize(7, 'butterfly') %>.</p>
+
+<p><%= pluralize(2, 'octopus') %>.</p>
+
+<p><%= pluralize(27, 'word') %>.</p>
+
+<p><%= truncate(@story, :length => 20) %></p>
+
+<ul>
+  <% @numbers.each do |n| %>
+    <li style="background-color: <%= cycle( 'red', 'green', 'purple', 'orange' ) %>"><%= n %></li>
+  <% end %>
+</ul>
