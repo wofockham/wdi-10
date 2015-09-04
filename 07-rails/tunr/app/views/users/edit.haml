@@ -1,0 +1,20 @@
+- if @user.errors.any?
+  %ol
+    - @user.errors.full_messages.each do |msg|
+      %li= msg
+
+= form_for @user do |f|
+  %p
+    = f.label :email
+    = f.email_field :email
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :password
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+
+  = f.submit

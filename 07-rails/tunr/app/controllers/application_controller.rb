@@ -7,8 +7,11 @@ class ApplicationController < ActionController::Base
 
   private
   def fetch_current_user
+    # Check if there's someone logged in whose data we need to load for them.
     if session[:user_id].present?
+      # .find_by is safer than .find for non-existent IDs because it won't throw an error.
       @current_user = User.find_by :id => session[:user_id]
+      # Stop trying to log this user_id in if we can't find them in the database.
       session[:user_id] = nil unless @current_user.present?
     end
   end
