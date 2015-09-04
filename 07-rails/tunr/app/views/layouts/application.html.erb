@@ -9,6 +9,7 @@
 <body>
 
 <nav>
+  <%= "Welcome back #{ @current_user.name }" if @current_user.present? %>
   <%= link_to 'Home', '/' %>
   <%= link_to 'Create Account', new_user_path %>
 </nav>
