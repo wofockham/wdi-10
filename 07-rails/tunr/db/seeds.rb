@@ -26,7 +26,7 @@ g3 = Genre.create :name => "Chamber pop"
 g4 = Genre.create :name => "Alternative"
 
 User.destroy_all
-u1 = User.create :name => 'Craigsy', :email => 'craigsy@gmail.com', :password => 'chicken'
+u1 = User.create :name => 'Craigsy', :email => 'craigsy@gmail.com', :password => 'chicken', :admin => true
 u2 = User.create :name => 'Jonesy', :email => 'jonesy@gmail.com', :password => 'chicken'
 
 Mixtape.destroy_all

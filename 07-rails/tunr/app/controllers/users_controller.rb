@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-  before_action :check_if_logged_in, :only => [:edit, :update]
+  before_action :check_if_logged_in, :only => [:index, :edit, :update]
+  before_action :check_if_admin, :only => [:index]
+
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new
@@ -19,6 +24,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = @current_user
+    if @user.update user_params
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -28,5 +39,9 @@ class UsersController < ApplicationController
 
   def check_if_logged_in
     redirect_to root_path unless @current_user.present?
+  end
+
+  def check_if_admin
+    redirect_to root_path unless @current_user.present? && @current_user.admin?
   end
 end

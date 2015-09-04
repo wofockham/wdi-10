@@ -11,7 +11,8 @@
     %li harpo
     %li chio
 
-%h2= Random.rand
+- if @current_user.present? && @current_user.admin?
+  %h2= Random.rand
 
 - [1, 2, 3].each do |n|
   %div= n
