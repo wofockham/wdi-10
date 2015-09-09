@@ -8,22 +8,24 @@
 </head>
 <body>
 
-<nav>
-  <%= link_to 'Home', '/' %>
-  <% if @current_user.present? %>
-    <%= link_to "Edit profile", edit_user_path %>
-    <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %>
-  <% else %>
-    <%= link_to 'Create Account', new_user_path %>
-    <%= link_to 'Login', login_path %>
+<div class="container">
+  <nav>
+    <%= link_to 'Home', '/' %>
+    <% if @current_user.present? %>
+      <%= link_to "Edit profile", edit_user_path %>
+      <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %>
+    <% else %>
+      <%= link_to 'Create Account', new_user_path %>
+      <%= link_to 'Login', login_path %>
+    <% end %>
+  </nav>
+
+  <% if flash[:message].present? %>
+    <p><%= flash[:message] %></p>
   <% end %>
-</nav>
 
-<% if flash[:message].present? %>
-  <p><%= flash[:message] %></p>
-<% end %>
-
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
