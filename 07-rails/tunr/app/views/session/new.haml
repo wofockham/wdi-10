@@ -1,10 +1,12 @@
 %h2 Login
 
-= form_tag '/login' do
-  = label_tag :email
-  = text_field_tag :email
+= form_tag '/login', :class => 'form-inline' do
+  %div.form-group
+    = label_tag :email
+    = text_field_tag :email, nil, :class => 'form-control'
 
-  = label_tag :password
-  = password_field_tag :password
+  %div.form-group
+    = label_tag :password
+    = password_field_tag :password, nil, :class => 'form-control'
 
-  = submit_tag 'Login to Tunr'
+  = submit_tag 'Login to Tunr', :class => 'btn btn-primary'
