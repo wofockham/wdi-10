@@ -46,5 +46,12 @@ $(document).ready(function () {
     searchFlickr(query);
 
   });
-});
 
+  $(window).on('scroll', function () {
+    console.log('doc height:', $(document).height(),
+      'win height:', $(window).height(),
+      'scrollTop:', $(window).scrollTop(),
+      'win + scrollTop:', $(window).height() + $(window).scrollTop()
+    );
+  });
+});
