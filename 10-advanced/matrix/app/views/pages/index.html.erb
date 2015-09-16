@@ -1,0 +1,11 @@
+<h2>Welcome to the Matrix</h2>
+
+<div>
+  <%= number_field_tag 'number', nil, :autofocus => true %>
+  <%= button_tag 'add number', :id => 'add_number' %>
+  <%= button_tag 'square', :id => 'square' %>
+  <%= button_tag 'start', :id => 'start' %>
+  <%= button_tag 'stop', :id => 'stop' %>
+</div>
+
+<div id="numbers"></div>
