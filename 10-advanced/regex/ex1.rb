@@ -1,3 +1,3 @@
 ARGF.each do |line|
-  puts line if line =~ /.red/
+  puts line if line =~ /fred/
 end
