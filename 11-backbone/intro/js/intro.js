@@ -32,20 +32,45 @@ var zoo = new Zoo([ animal1, animal2, animal3 ]);
 
 
 // Views
+// var theZoo = new ZooView({collection: animals})
 var ZooView = Backbone.View.extend({
   el: '#main',
 
-  initialize: function () {
+  events: {
+    'mouseover h2': 'easterEgg',
+    'click li': 'animalInfo'
+  },
+
+  initialize: function (options) {
     console.log('initializing ZooView');
+    this.collection = options.collection;
   },
 
   render: function () {
-    this.$el.html('Welcome to our Zoo');
+    this.$el.html('<h2>Welcome to our Zoo</h2>');
+    this.$el.append('<ul id="animals"/>');
+
+    this.collection.each(function (model) {
+      var $li = $('<li/>').text( model.get('type') );
+      $li.appendTo('#animals');
+    });
+  },
+
+  easterEgg: function () {
+    this.$el.find('h2').hide().slideDown(4000);
+  },
+
+  animalInfo: function (event) {
+    var name = $(event.target).text();
+    alert('You clicked on ' + name);
   }
 });
 
 
-
+$(document).ready(function () {
+  var zooView = new ZooView({collection: zoo});
+  zooView.render();
+});
 
 
 
