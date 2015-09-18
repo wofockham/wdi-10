@@ -13,7 +13,7 @@ var Posts = Backbone.Collection.extend({
 var blogPosts = new Posts([
   new Post({id: 1, title: 'Post 1', content: 'Content of first post'}),
   new Post({id: 2, title: 'Post 2', content: 'Different content of the second post'}),
-  new Post({id: 3, title: 'Third post', content: 'Any old content'}),
+  new Post({id: 3, title: 'Literally anything', content: 'Any old content'}),
   new Post({id: 4, title: 'Fourth post', content: 'More bullshit goes here.'})
 ]);
 
@@ -37,14 +37,29 @@ var PostListView = Backbone.View.extend({
     'click': 'showPost'
   },
   render: function () {
-    this.$el.html( this.model.get('title') );
+    var postListTemplate = $('#postListView').html();
+    var postListHTML = _.template(postListTemplate);
+    var postList = postListHTML( this.model.toJSON() );
+
+    this.$el.html(postList);
+
     this.$el.appendTo('#posts');
   },
   showPost: function () {
-    console.log('showing post', this.model.get('id'));
+    router.navigate('posts/' + this.model.get('id'), true);
   }
 });
 
+
+var PostView = Backbone.View.extend({
+  el: '#main',
+  render: function () {
+    var postTemplate = $('#postView').html();
+    var postHTML = _.template(postTemplate);
+    var post = postHTML( this.model.toJSON() );
+    this.$el.html(post);
+  }
+});
 
 var AppRouter = Backbone.Router.extend({
   routes: {
@@ -58,7 +73,9 @@ var AppRouter = Backbone.Router.extend({
   },
 
   viewPost: function (id) {
-    console.log('you are viewing post:', id);
+    var post = blogPosts.get(id);
+    var postView = new PostView({model: post});
+    postView.render();
   }
 });
 
@@ -68,24 +85,3 @@ $(document).ready(function () {
   router = new AppRouter();
   Backbone.history.start();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
