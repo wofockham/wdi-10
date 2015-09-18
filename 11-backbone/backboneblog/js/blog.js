@@ -23,9 +23,27 @@ var AppView = Backbone.View.extend({
   render: function () {
     var html = $('#appView').html();
     this.$el.html(html);
+
+    this.collection.each(function (post) {
+      var postListView = new PostListView({model: post});
+      postListView.render();
+    });
   }
 });
 
+var PostListView = Backbone.View.extend({
+  tagName: 'li',
+  events: {
+    'click': 'showPost'
+  },
+  render: function () {
+    this.$el.html( this.model.get('title') );
+    this.$el.appendTo('#posts');
+  },
+  showPost: function () {
+    console.log('showing post', this.model.get('id'));
+  }
+});
 
 
 var AppRouter = Backbone.Router.extend({
@@ -35,7 +53,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    var appView = new AppView();
+    var appView = new AppView({collection: blogPosts});
     appView.render();
   },
 
