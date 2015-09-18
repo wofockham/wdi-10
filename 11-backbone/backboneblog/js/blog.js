@@ -17,6 +17,17 @@ var blogPosts = new Posts([
   new Post({id: 4, title: 'Fourth post', content: 'More bullshit goes here.'})
 ]);
 
+
+var AppView = Backbone.View.extend({
+  el: '#main',
+  render: function () {
+    var html = $('#appView').html();
+    this.$el.html(html);
+  }
+});
+
+
+
 var AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
@@ -24,7 +35,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    console.log('you have reached the index');
+    var appView = new AppView();
+    appView.render();
   },
 
   viewPost: function (id) {
