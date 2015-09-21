@@ -4,5 +4,6 @@ var app = app || {};
 // It has additional methods such as pluck() and get() which arrays lack.
 // See docs for the additional underscore methods available.
 app.Posts = Backbone.Collection.extend({
+  url: '/posts',
   model: app.Post
 });
