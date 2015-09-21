@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// It's helpful here to guide Rails to load the required Backbone files in a sensible order.
+//
 //= require jquery
 //= require jquery_ujs
 //= require underscore
