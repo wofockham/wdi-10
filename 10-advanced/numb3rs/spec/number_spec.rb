@@ -12,14 +12,20 @@ describe Number do
   end
 
   describe '.dec2bin' do
-    expect(Number.dec2bin(13)).to eq '1101'
+    it 'converts decimal to binary' do
+      expect(Number.dec2bin(13)).to eq '1101'
+    end
   end
 
   describe '.bin2hex' do
-    expect(Number.bin2hex('1110111110011')).to eq '1df3'
+    it 'converts binary to hexadecimal' do
+      expect(Number.bin2hex('1110111110011')).to eq '1df3'
+    end
   end
 
   describe '.hex2bin' do
-    expect(Number.hex2bin('1df3')).to eq '1110111110011'
+    it 'converts hexadecimal to binary' do
+      expect(Number.hex2bin('1df3')).to eq '1110111110011'
+    end
   end
 end
