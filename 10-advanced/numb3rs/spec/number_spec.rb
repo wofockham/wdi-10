@@ -1,0 +1,25 @@
+require_relative '../number'
+
+describe Number do
+  describe '.bin2dec' do
+    it 'converts binary to decimal' do
+      expect(Number.bin2dec('1101')).to eq 13
+      expect(Number.bin2dec('1010')).to eq 10
+      expect(Number.bin2dec('0000')).to eq 0
+      expect(Number.bin2dec('1111')).to eq 15
+      expect(Number.bin2dec('1010011010')).to eq 666
+    end
+  end
+
+  describe '.dec2bin' do
+    expect(Number.dec2bin(13)).to eq '1101'
+  end
+
+  describe '.bin2hex' do
+    expect(Number.bin2hex('1110111110011')).to eq '1df3'
+  end
+
+  describe '.hex2bin' do
+    expect(Number.hex2bin('1df3')).to eq '1110111110011'
+  end
+end
