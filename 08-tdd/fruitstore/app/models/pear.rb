@@ -1,0 +1,2 @@
+class Pear < Fruit
+end
