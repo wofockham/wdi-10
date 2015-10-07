@@ -13,5 +13,9 @@ namespace :twitter do
 
   task :search, [:query, :limit] => :environment do |t, args|
     # Your code goes here
+    # Fetch limit number of tweets matching query from Twitter and insert them into the DB.
+    # Don't bother creating users.
   end
 end
+
+# rake twitter:search[butterfly,80]
