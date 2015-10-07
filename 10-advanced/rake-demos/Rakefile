@@ -1,0 +1,56 @@
+# directory "tmp"
+
+# file "tmp/hello.txt" => "tmp" do
+#   sh "echo Hello >> tmp/hello.txt"
+# end
+
+task :default => 'morning:ready_for_the_day'
+
+namespace :morning do
+  desc "Turn off the alarm"
+  task :turn_off_alarm do
+    puts "Turned off the goddamn alarm"
+  end
+
+  desc "Make delicious black coffee"
+  task :make_coffee do
+    cups = ENV['COFFEE_CUPS'] || 4
+    puts "Make #{ cups } cups of coffee"
+  end
+
+  desc "Walk my wife's horrible little dog"
+  task :walk_dog do
+    puts "Walk that horrible little dog"
+  end
+
+  desc "Perform manscaping"
+  task :groom_self do
+    puts "Brush teeth"
+    puts "Blowdry hair"
+    puts "Shave shoulders"
+  end
+
+  task :ready_for_the_day => [:turn_off_alarm, :make_coffee, :walk_dog, :groom_self]
+end
+
+namespace :morning do
+  task :groom_self do
+    puts "Comb beard"
+  end
+end
+
+namespace :afternoon do
+  desc "Make special afternoon coffee"
+  task :make_coffee do
+    Rake::Task['morning:make_coffee'].invoke
+    puts "Adds a bunch of rum"
+    puts "Ready for the afternoon!"
+  end
+end
+
+
+
+
+
+
+
