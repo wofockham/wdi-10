@@ -10,6 +10,8 @@
 #
 
 class Fruit < ActiveRecord::Base
+  belongs_to :shelf
+
   def squishy?
     true
   end
