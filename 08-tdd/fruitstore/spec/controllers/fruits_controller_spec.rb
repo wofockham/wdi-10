@@ -51,4 +51,34 @@ RSpec.describe FruitsController, type: :controller do
     end
   end
 
+  describe 'POST to create' do
+    describe 'a fruit with valid information' do
+      before do
+        post :create, { :fruit => { :name => 'Strawberry'} }
+      end
+
+      it 'should redirect to the show action' do
+        # Your code goes here
+      end
+
+      it 'should increase the number of fruits' do
+        # Your code goes here
+      end
+    end
+
+    describe 'a fruit without a name' do
+      before do
+        post :create, {}
+      end
+
+      it 'should render the new template' do
+        # Your code goes here
+      end
+
+      it 'should not increase the number of fruits' do
+        # Your code goes here
+      end
+    end
+  end
+
 end
