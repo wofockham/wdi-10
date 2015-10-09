@@ -10,6 +10,10 @@ When(/^I add them together$/) do
   @result = @calculator.add
 end
 
-Then(/^I should see (\d+) in the terminal$/) do |num|
+When(/^I subtract them$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see (-?\d+) in the terminal$/) do |num|
   assert_equal num.to_i, @result
 end

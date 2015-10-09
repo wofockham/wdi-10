@@ -1,4 +1,5 @@
 class Calculator
+
   def initialize
     @input = []
   end
