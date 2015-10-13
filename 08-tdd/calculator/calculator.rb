@@ -14,4 +14,10 @@ class Calculator
     result
   end
 
+  def subtract
+    result = @input.inject { |difference, x| difference - x }
+    puts result
+    result
+  end
+
 end

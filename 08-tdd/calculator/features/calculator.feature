@@ -15,5 +15,6 @@ Feature: Calculator
     Given I have a calculator
     And I have the number 5
     And I have the number 7
+    And I have the number 5
     When I subtract them
-    Then I should see -2 in the terminal
+    Then I should see -7 in the terminal

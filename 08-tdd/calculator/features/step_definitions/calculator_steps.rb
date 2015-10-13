@@ -11,7 +11,7 @@ When(/^I add them together$/) do
 end
 
 When(/^I subtract them$/) do
-  pending # express the regexp above with the code you wish you had
+  @result = @calculator.subtract
 end
 
 Then(/^I should see (-?\d+) in the terminal$/) do |num|
