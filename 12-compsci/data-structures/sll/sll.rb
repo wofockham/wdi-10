@@ -1,6 +1,8 @@
 class SinglyLinkedList
   attr_accessor :head
 
+  include Enumerable # Mixin
+
   def initialize(first_value)
     @head = Node.new(first_value) if first_value
   end
@@ -46,7 +48,12 @@ class SinglyLinkedList
   end
 
   def each
-    # Your code here
+    current_node = @head
+
+    while current_node
+      yield(current_node.value) if block_given?
+      current_node = current_node.next
+    end
   end
 
   class Node

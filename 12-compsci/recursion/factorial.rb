@@ -18,4 +18,4 @@ def factorial(n)
   end
 end
 
-puts factorial(500000000) # => 5040
+puts factorial(7) # => 5040
